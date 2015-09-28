@@ -14,6 +14,10 @@ describe 'package_ensure' do
         package { 'foopackage2':
           ensure => $latest,
         }
+
+        foo::bar { 'fubar':
+          ensure => latest,
+        }
         EOS
       }
 
@@ -32,6 +36,10 @@ describe 'package_ensure' do
         package { 'foopackage2':
           ensure => $latest,
         }
+
+        foo::bar { 'fubar':
+          ensure => latest,
+        }
         EOS
       }
 
@@ -42,6 +50,7 @@ describe 'package_ensure' do
       it 'should create a warning' do
         expect(problems).to contain_warning(msg).on_line(2).in_column(21)
         expect(problems).not_to contain_warning(msg).on_line(6).in_column(21)
+        expect(problems).not_to contain_warning(msg).on_line(10).in_column(21)
       end
     end
   end
@@ -60,6 +69,10 @@ describe 'package_ensure' do
 
         package { 'foopackage2':
           ensure => $latest,
+        }
+
+        foo::bar { 'fubar':
+          ensure => latest,
         }
         EOS
       }
@@ -83,6 +96,10 @@ describe 'package_ensure' do
         package { 'foopackage2':
           ensure => $latest,
         }
+
+        foo::bar { 'fubar':
+          ensure => latest,
+        }
         EOS
       }
 
@@ -93,6 +110,7 @@ describe 'package_ensure' do
       it 'should create a warning' do
         expect(problems).to contain_fixed(msg).on_line(2).in_column(21)
         expect(problems).not_to contain_fixed(msg).on_line(6).in_column(21)
+        expect(problems).not_to contain_fixed(msg).on_line(10).in_column(21)
       end
 
       it 'should fix the ensure parameter' do
@@ -104,6 +122,10 @@ describe 'package_ensure' do
 
         package { 'foopackage2':
           ensure => $latest,
+        }
+
+        foo::bar { 'fubar':
+          ensure => latest,
         }
           EOS
         )
