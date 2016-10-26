@@ -2,13 +2,13 @@ PATH
   remote: .
   specs:
     puppet-lint-package_ensure-check (0.1.0)
-      puppet-lint (~> 1.0)
+      puppet-lint (>= 1.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.2.5)
-    puppet-lint (1.1.0)
+    puppet-lint (2.0.2)
     rake (10.4.2)
     rspec (3.3.0)
       rspec-core (~> 3.3.0)
@@ -40,4 +40,4 @@ DEPENDENCIES
   rspec-its (~> 1.0)
 
 BUNDLED WITH
-   1.10.3
+   1.10.6
