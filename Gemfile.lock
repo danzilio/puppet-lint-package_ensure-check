@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    puppet-lint-package_ensure-check (0.1.0)
+    puppet-lint-package_ensure-check (0.2.0)
       puppet-lint (>= 1.0)
 
 GEM
